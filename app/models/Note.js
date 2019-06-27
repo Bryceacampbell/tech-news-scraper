@@ -1,5 +1,5 @@
-import { Schema as _Schema, model } from "mongoose";
-let Schema = _Schema;
+let mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 
 let NoteSchema = new Schema ({
 
@@ -8,6 +8,6 @@ let NoteSchema = new Schema ({
 
 });
 
-let Note = model("Note", NoteSchema);
+let Note = mongoose.model("Note", NoteSchema);
 
-export default Note;
+module.exports = Note;

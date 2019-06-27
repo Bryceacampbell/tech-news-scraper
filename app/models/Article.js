@@ -1,5 +1,5 @@
-import { Schema as _Schema, model } from "mongoose";
-let Schema = _Schema;
+let mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 
 let ArticleSchema = new Schema({
 
@@ -27,6 +27,6 @@ let ArticleSchema = new Schema({
     }
 });
 
-let Article = model("Article", ArticleSchema);
+let Article = mongoose.model("Article", ArticleSchema);
 
-export default Article;
+module.exports = Article;

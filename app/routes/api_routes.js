@@ -7,6 +7,10 @@ let db = require("../models");
 
 module.exports = function (app) {
 
+    app.get("/", function (req, res) {
+        res.render("index");
+    });
+
     app.get("/scrape", function (req, res) {
 
         axios.get("https://www.technewsworld.com/").then(function (response) {
@@ -28,7 +32,10 @@ module.exports = function (app) {
                         console.log(error);
                     });
             });
-        });
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
         res.send("Complete");
     });
 
